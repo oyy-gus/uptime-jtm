@@ -1,16 +1,16 @@
 ## About
-Welcome to uptime
+Welcome to uptime-jtm
 
 <br>
 
 ## Installation
 ```sh-session
-npm install uptime@latest
+npm install uptime-jtm@latest
 ```
 
 ## Example
 ```js
-const { Uptime } = require("uptime");
+const { Uptime } = require("uptime-jtm");
 
 let url = ["url"];
 
