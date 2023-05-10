@@ -15,5 +15,5 @@ const { Uptime } = require("uptime-jtm");
 let url = ["url"];
 
 //about the duration, can be customized at will
-Uptime(url, 1000);
+Uptime({ isUrl: url, isDuration: 1000, log: true });
 ```

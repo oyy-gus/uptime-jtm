@@ -1,14 +1,17 @@
-const axios = require("axios");
+import axios from "axios";
 
-module.exports = {
-  Uptime,
-}
-
-function Uptime(isUrl, isDuration) {
-  if (!isUrl) throw new Error("Please enter url!");
+function Uptime({ isUrl = [], isDuration = 60000, log = false }) {
+  if (!lisUrl.length === 0) throw new Error("Please enter url!");
   setInterval(() => {
     isUrl.forEach((url) => {
-      axios.get(url).then(console.log(`Success running on: ${url}`)).catch(e => void 0);
+      axios.get(url).then(() => {
+        if (log) console.log(`${url} is up.`);
+      }).catch(() => {
+        if (log) console.log(`${url} is down.`);
+      });
     });
-  }, isDuration ? isDuration: 100*1000);
+  }, isDuration);
 }
+
+export { Uptime };
+export default Uptime;
